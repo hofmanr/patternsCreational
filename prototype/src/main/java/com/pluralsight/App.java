@@ -3,7 +3,11 @@ package com.pluralsight;
 import com.pluralsight.prototype.Movie;
 import com.pluralsight.prototype.Registry;
 import com.pluralsight.serialization.Movie2;
+import com.pluralsight.serialization.Record;
 import com.pluralsight.serialization.Registry2;
+
+import java.time.LocalDateTime;
+import java.util.Arrays;
 
 /**
  * Hello world!
@@ -33,7 +37,13 @@ public class App
         System.out.println("--------------------------");
         System.out.println("commons-lang3");
         Registry2 registry2 = new Registry2();
-        Movie2 movie2 = (Movie2) registry2.createItem("Movie");
+
+        System.out.println(LocalDateTime.now());
+        Movie2 movie2 = null;
+        for (int i = 0; i < 1000000; i++) {
+            movie2 = (Movie2) registry2.createItem("Movie");
+        }
+        System.out.println(LocalDateTime.now());
         movie.setTitle("Creational Patterns in Java");
 
         System.out.println(movie2);
@@ -41,7 +51,12 @@ public class App
         System.out.println(movie2.getActors());
         System.out.println(movie2.getRecord());
 
-        Movie2 anotherMovie2 = (Movie2) registry2.createItem("Movie");
+        System.out.println(LocalDateTime.now());
+        Movie2 anotherMovie2 = null;
+        for (int i = 0; i < 1000000; i++) {
+            anotherMovie2 = (Movie2) registry2.createItem("Movie");
+        }
+        System.out.println(LocalDateTime.now());
         anotherMovie.setTitle("Gang of Four");
 
         System.out.println(anotherMovie2);
@@ -49,5 +64,17 @@ public class App
         System.out.println(anotherMovie2.getActors());
         System.out.println(anotherMovie2.getRecord());
 
+
+        System.out.println("--------------------------");
+        System.out.println("New Movie");
+        System.out.println(LocalDateTime.now());
+        for (int i = 0; i < 1000000; i++) {
+            movie2 = new Movie2();
+            movie2.setTitle("Basic Movie");
+            movie2.setPrice(24.99);
+            movie2.setRecord(new Record());
+            movie2.setActors(Arrays.asList("John Wayne", "Sudrey Hepburn"));
+        }
+        System.out.println(LocalDateTime.now());
     }
 }
