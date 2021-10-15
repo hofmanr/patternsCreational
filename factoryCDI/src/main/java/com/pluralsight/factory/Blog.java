@@ -10,12 +10,13 @@ import org.slf4j.LoggerFactory;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+// To use instead of WebsiteFactory:
 //@Site(WebsiteType.BLOG)
 public class Blog extends Website {
     private static Logger LOGGER = LoggerFactory.getLogger(Blog.class);
 
     /**
-     * PostConstruct does not wok when using de WebsiteFactory
+     * PostConstruct does not wok when using the WebsiteFactory
      */
     @PostConstruct
     public void initialize() {
@@ -23,7 +24,7 @@ public class Blog extends Website {
     }
 
     /**
-     * PreDestroy does not wok when using de WebsiteFactory
+     * PreDestroy does not wok when using the WebsiteFactory
      */
     @PreDestroy
     public void cleanup() {
