@@ -4,19 +4,30 @@ import com.pluralsight.factory.page.AboutPage;
 import com.pluralsight.factory.page.CommentPage;
 import com.pluralsight.factory.page.ContactPage;
 import com.pluralsight.factory.page.PostPage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+//@Site(WebsiteType.BLOG)
 public class Blog extends Website {
+    private static Logger LOGGER = LoggerFactory.getLogger(Blog.class);
+
+    /**
+     * PostConstruct does not wok when using de WebsiteFactory
+     */
     @PostConstruct
     public void initialize() {
-        System.out.println("Initializing");
+        LOGGER.debug("Initializing");
     }
 
+    /**
+     * PreDestroy does not wok when using de WebsiteFactory
+     */
     @PreDestroy
     public void cleanup() {
-        System.out.println("Cleaning");
+        LOGGER.debug("Cleaning");
     }
 
     @Override

@@ -14,12 +14,12 @@ public class App {
 
     @Inject
     @Site(WebsiteType.SHOP)
-    private Shop shop;
+    private Website shop;
 
     public void run() {
         LOGGER.info("Running...");
-        LOGGER.debug(blog.getPages().toString());
-        LOGGER.debug(shop.getPages().toString());
+        LOGGER.info(blog.getPages().toString());
+        LOGGER.info(shop.getPages().toString());
     }
 
 

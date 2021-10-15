@@ -4,6 +4,7 @@ import com.pluralsight.factory.page.CartPage;
 import com.pluralsight.factory.page.ItemPage;
 import com.pluralsight.factory.page.SearchPage;
 
+//@Site(WebsiteType.SHOP)
 public class Shop extends Website {
     @Override
     public void createWebsite() {

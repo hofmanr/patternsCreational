@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 
 @Qualifier
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.METHOD, ElementType.PARAMETER, ElementType.FIELD})
+@Target({ElementType.METHOD, ElementType.TYPE, ElementType.FIELD})
 public @interface Site {
     WebsiteType value();
 }

@@ -10,18 +10,27 @@ import javax.enterprise.inject.Produces;
 public class WebsiteFactory {
     private static Logger LOGGER = LoggerFactory.getLogger(WebsiteFactory.class);
 
+    /**
+     * Just to demonstrate the @Produces
+     * The other way is to add @Site(WebsiteType.BLOG) to the class Blog
+     * @return
+     */
     @Produces
     @Site(WebsiteType.BLOG)
     public Blog blogSite() {
         LOGGER.info("BLOG created");
-        return new Blog();
+        Blog blog = new Blog();
+        // Do the PostConstruct here...
+        return blog;
     }
 
     @Produces
     @Site(WebsiteType.SHOP)
     public Shop shopSite() {
         LOGGER.info("SHOP created");
-        return new Shop();
+        Shop shop = new Shop();
+        // Do the PostConstruct here...
+        return shop;
     }
 
 }
