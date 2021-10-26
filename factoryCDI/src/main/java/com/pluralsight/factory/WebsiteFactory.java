@@ -17,7 +17,7 @@ public class WebsiteFactory {
      */
     @Produces
     @Site(WebsiteType.BLOG)
-    public Blog blogSite() {
+    public Website blogSite() {
         LOGGER.info("BLOG created");
         Blog blog = new Blog();
         // Do the PostConstruct here...
@@ -26,7 +26,7 @@ public class WebsiteFactory {
 
     @Produces
     @Site(WebsiteType.SHOP)
-    public Shop shopSite() {
+    public Website shopSite() {
         LOGGER.info("SHOP created");
         Shop shop = new Shop();
         // Do the PostConstruct here...
