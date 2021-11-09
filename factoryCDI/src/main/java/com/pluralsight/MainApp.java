@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import com.pluralsight.factory.App;
+import com.pluralsight.factory2.App2;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
 
@@ -22,6 +23,8 @@ public class MainApp
             // container.getBeanManager().fireEvent(new SimpleEvent());
 
             container.select(App.class).get().run();
+
+            container.select(App2.class).get().run();
         }
 
         // OR with implementation
